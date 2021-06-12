@@ -2,14 +2,25 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+	<script type="text/javascript" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
 	<title>Youtube Video Downloader</title>
 </head>
-<body>
-	<form action="" method="post">
-		{%csrf_token%}
-		<label for="url">Enter URL:</label>
-		<input type="text" name="url" id = "url">
-		<input type="submit" value="submit">
-	</form>
+<body style="background: linear-gradient(to left, #3a7bd5, #3a6073);">
+	<div class="container">
+		<form action="" method="post">
+			{%csrf_token%}
+			<div class="nav justify-content-center mb-5" style="margin-top: 15%;">
+				<label for="url">Enter URL:</label>
+				<input type="text" name="url" id = "url">
+				<input type="submit" value="submit">
+			</div>
+		</form>
+	{%if thumbnail_img%}
+		<div class="nav justify-content-center">
+			<img src="{{thumbnail_img}}" height="400px" width="710px">
+		</div>
+	{%endif%}
+	</div>
 </body>
 </html>
